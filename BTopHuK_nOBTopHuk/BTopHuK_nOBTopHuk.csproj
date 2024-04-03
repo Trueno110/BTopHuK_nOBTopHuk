@@ -55,7 +55,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Razdel.cs" />
     <Page Include="BXOD.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ChoiseToAdd.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -69,6 +74,9 @@
     </Compile>
     <Compile Include="BXOD.xaml.cs">
       <DependentUpon>BXOD.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ChoiseToAdd.xaml.cs">
+      <DependentUpon>ChoiseToAdd.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
@@ -129,13 +137,22 @@
     <Resource Include="Images\Icons\4.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\Icons\5.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Images\Icons\3.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="p1_3387409_82fd98d0.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Fons\6.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="oppenheimer_1581_107762084.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Icons\5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Icons\7.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

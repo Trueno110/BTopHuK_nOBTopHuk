@@ -23,15 +23,11 @@ namespace BTopHuK_nOBTopHuk
         public MainWindow()
         {
             InitializeComponent();
-            List_Rasdlov.Items.Add(Grepg());
-            List_Rasdlov.Items.Add(Grepg());
-            List_Rasdlov.Items.Add(Grepg());
+
         }
-        public Grid Grepg()
+        public Grid Grepg(String IdIcons, String Name)
         {
             Grid Grepg = new Grid();
-            Grepg.Height = 133;
-            Grepg.Width = 216;
 
             ColumnDefinition col1 = new ColumnDefinition();
             ColumnDefinition col2 = new ColumnDefinition();
@@ -41,19 +37,30 @@ namespace BTopHuK_nOBTopHuk
             Grepg.ColumnDefinitions.Add(col2);
 
             Image image = new Image();
-            image.Source = new BitmapImage(new Uri("/images/icons/2.png", UriKind.Relative));
- 
+            image.Source = new BitmapImage(new Uri("/images/icons/" + IdIcons + ".png", UriKind.Relative));
+            image.VerticalAlignment = VerticalAlignment.Top;
+            image.Height = 40;
+            image.Width = 40;
 
             TextBlock textBlock = new TextBlock();
-            textBlock.Text = "моя заметка";
+            textBlock.Text = Name;
             textBlock.TextAlignment = TextAlignment.Center;
+            textBlock.HorizontalAlignment = HorizontalAlignment.Center;
             textBlock.VerticalAlignment = VerticalAlignment.Top;
- 
-            Grid.SetColumn(textBlock, 1);
+            textBlock.SetValue(Grid.ColumnProperty, 1);
+            textBlock.FontSize = 20;
 
             Grepg.Children.Add(image);
             Grepg.Children.Add(textBlock);
             return Grepg;
+        }
+
+        private void Addor_Click(object sender, RoutedEventArgs e)
+        {
+            Razdel razdel = new Razdel();
+            ChoiseToAdd choiseToAdd = new ChoiseToAdd(razdel);
+            choiseToAdd.ShowDialog();
+            List_Rasdlov.Items.Add(Grepg(razdel.IdIcon,razdel.Name));
         }
     }
 }

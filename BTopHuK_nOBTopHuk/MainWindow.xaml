@@ -20,17 +20,17 @@
             <TextBlock Grid.Column="0" TextAlignment="Center" VerticalAlignment="Center" Text="Geniy" Name="Geniy" FontSize="20" Foreground="White"/>
             <ScrollViewer Grid.Row="1">
                 <ListBox Background="Beige" x:Name="List_Rasdlov">
-                    <Grid Height="133" Width="216" >
+                    <Grid>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition/>
                             <ColumnDefinition Width="4*"/>
                         </Grid.ColumnDefinitions>
-                        <Image Source="/Images/Icons/2.png" />
-                        <TextBlock Text="Моя заметка" TextAlignment="Center" VerticalAlignment="Top"  Grid.Column="1" />
+                        <Image Source="/Images/Icons/2.png"  VerticalAlignment="Top" Height="40" Width="40" />
+                        <TextBlock Text="Моя заметка" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Top"  Grid.Column="1" FontSize="20" />
 
-                        <Image Source="/Images/Icons/4.png"  />
-                        <TextBlock Text="Добавить" TextAlignment="Center" VerticalAlignment="Top"  Grid.Column="1" />
+                       
                     </Grid>
+                    <Button Content="Добавить" Name="Addor" Width="160" Height="40" HorizontalAlignment="Center" VerticalAlignment="Top" Background="Black" Foreground="Aqua" Click="Addor_Click"/>
                 </ListBox>
             </ScrollViewer>
         </Grid>
@@ -38,10 +38,10 @@
             <Grid.RowDefinitions>
                 <RowDefinition Height="1*"/>
                 <RowDefinition Height="3*"/>
+               
 
             </Grid.RowDefinitions>
-            <Image  Grid.RowSpan="2" Source="/p1_3387409_82fd98d0.jpg" Stretch="Fill"/>
-
+            <Image Grid.Row="0" Source="/Images/Fons/6.jpg" Stretch="Fill" />
         </Grid>
     </Grid>
 </Window>

@@ -7,10 +7,12 @@
         mc:Ignorable="d"
         Title="BXOD" Height="450" Width="800">
     <Grid>
-        <TextBox HorizontalAlignment="Left" Margin="176,114,0,0" TextWrapping="Wrap" Background="Black" Foreground="White" VerticalAlignment="Top" Width="245" Height="36" RenderTransformOrigin="0.557,-0.128"/>
-        <TextBox HorizontalAlignment="Center" Margin="0,217,0,0" TextWrapping="Wrap" Background="Black" Foreground="White" VerticalAlignment="Top" Width="212" Height="25"/>
-        <TextBlock HorizontalAlignment="Left" Margin="221,87,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="Black" Width="212" Height="27"><Run FontSize="15" Language="ru-ru" Text="Введите Логин"/></TextBlock>
-        <TextBlock HorizontalAlignment="Left" Margin="260,259,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="Black" Width="233" Height="27"><Run FontSize="15" Text="Введите "/><Run FontSize="15" Language="ru-ru" Text="Пароль"/></TextBlock>
+        <Image Source="/oppenheimer_1581_107762084.jpeg" Stretch="Fill"/>
+
+        <TextBox HorizontalAlignment="Left" Margin="176,114,0,0" TextWrapping="Wrap" Background="Black" Foreground="Red" VerticalAlignment="Top" Width="245" Height="36" RenderTransformOrigin="0.557,-0.128"/>
+        <TextBox HorizontalAlignment="Center" Margin="0,217,0,0" TextWrapping="Wrap" Background="Black" Foreground="Red" VerticalAlignment="Top" Width="212" Height="25"/>
+        <TextBlock HorizontalAlignment="Left" Margin="142,81,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="Black"  Width="212" Height="27"><Run FontSize="25" Language="ru-ru" Text="Введите Логин"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="237,247,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="Black" Width="233" Height="32"><Run FontSize="25" Text="Введите "/><Run FontSize="25" Language="ru-ru" Text="Пароль"/></TextBlock>
 
     </Grid>
 </Window>
