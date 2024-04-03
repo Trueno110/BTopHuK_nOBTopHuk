@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,6 +21,7 @@ namespace BTopHuK_nOBTopHuk
     /// </summary>
     public partial class MainWindow : Window
     {
+        SqlConnection conn = new SqlConnection(@"Data Source=(localdb); Initial Catalog=ToDoList; Integrated Security=True");
         public MainWindow()
         {
             InitializeComponent();
