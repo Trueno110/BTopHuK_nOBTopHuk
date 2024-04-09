@@ -17,9 +17,10 @@
                 <RowDefinition  Height="1*"/>
                 <RowDefinition Height="3*"/>
             </Grid.RowDefinitions>
+            
             <TextBlock Grid.Column="0" TextAlignment="Center" VerticalAlignment="Center" Text="Geniy" Name="Geniy" FontSize="20" Foreground="White"/>
             <ScrollViewer Grid.Row="1">
-                <ListBox Background="Beige" x:Name="List_Rasdlov">
+                <ListBox Background="Beige" x:Name="List_Rasdlov" SelectionChanged="List_Rasdlov_SelectionChanged">
                     <Grid>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition/>
@@ -34,6 +35,7 @@
                 </ListBox>
             </ScrollViewer>
         </Grid>
+        
         <Grid Grid.Column="1">
             <Grid.RowDefinitions>
                 <RowDefinition Height="1*"/>
@@ -41,7 +43,16 @@
                
 
             </Grid.RowDefinitions>
+            <ScrollViewer Grid.Column="1" Margin="10,10,2,3" Grid.Row="1">
+                <StackPanel x:Name="Stac">
+                    <CheckBox x:Name="DELO1" Content="Dedede" Foreground="White">
+                    </CheckBox>
+                </StackPanel>
+                
+               
+            </ScrollViewer>
             <Image Grid.Row="0" Source="/Images/Fons/6.jpg" Stretch="Fill" />
         </Grid>
+        
     </Grid>
 </Window>

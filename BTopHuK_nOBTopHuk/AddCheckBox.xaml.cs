@@ -15,22 +15,18 @@ using System.Windows.Shapes;
 namespace BTopHuK_nOBTopHuk
 {
     /// <summary>
-    /// Логика взаимодействия для BXOD.xaml
+    /// Логика взаимодействия для AddCheckBox.xaml
     /// </summary>
-    public partial class BXOD : Window
+    public partial class AddCheckBox : Window
     {
-        public BXOD()
+        public AddCheckBox()
         {
             InitializeComponent();
         }
 
-       
-
-        private void BXOD_Click(object sender, RoutedEventArgs e)
+        private void CreateZad_Click(object sender, RoutedEventArgs e)
         {
-            MainWindow main = new MainWindow();
-            main.Show();
-            this.Close();
+
         }
     }
 }

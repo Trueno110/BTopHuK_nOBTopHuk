@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Security.AccessControl;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -21,11 +22,12 @@ namespace BTopHuK_nOBTopHuk
     /// </summary>
     public partial class MainWindow : Window
     {
-        SqlConnection conn = new SqlConnection(@"Data Source=(localdb); Initial Catalog=ToDoList; Integrated Security=True");
+        int UserID = 1;
+        SqlConnection conn = new SqlConnection(@"Data Source=(localdb)\MSSQLLocalDB; Initial Catalog=ToDoList; Integrated Security=True");
         public MainWindow()
         {
             InitializeComponent();
-
+            conn.Open();
         }
         public Grid Grepg(String IdIcons, String Name)
         {
@@ -63,6 +65,35 @@ namespace BTopHuK_nOBTopHuk
             ChoiseToAdd choiseToAdd = new ChoiseToAdd(razdel);
             choiseToAdd.ShowDialog();
             List_Rasdlov.Items.Add(Grepg(razdel.IdIcon,razdel.Name));
+            SqlCommand sqlCommand = new SqlCommand($"insert into Section values({UserID},'{razdel.Name}',{razdel.IdIcon},2);", conn);
+            sqlCommand.ExecuteNonQuery();
+        }
+
+        private void List_Rasdlov_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            Stac.Children.Clear();
+            Stac.Children.Add(new Button() { Content = "Добавить" });
+            string aw = ((TextBlock)((Grid)List_Rasdlov.SelectedItem).Children[1]).Text;
+            SqlCommand sqlCommand = new SqlCommand($"Select description from Cases where Status = (Select Id from Section where Name = '{aw}')",conn);
+            SqlDataReader reader = sqlCommand.ExecuteReader();
+            
+            while (reader.Read())
+            {
+                CheckBox checkBox = new CheckBox();
+                checkBox.Content = reader[0];
+                checkBox.FontSize = 15;
+                Stac.Children.Add(checkBox);
+
+            }
+            reader.Close();
+        
+        
+        }
+        private void Button_Click2(object sender, RoutedEventArgs e) 
+        {
+            AddCheckBox addCheckBox = new AddCheckBox();
+            addCheckBox.ShowDialog();
+
         }
     }
 }
